@@ -1,0 +1,20 @@
+version: '4.5'
+
+services:
+
+  mongo:
+    image: javiervalero1/the-real-devops-challenge-mongo:latest
+    container_name: mongo
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+  
+  devops-challenge:
+    image: javiervalero1/the-real-devops-challenge-app:latest
+    depends_on:
+      - mongo
+    ports:
+      - "8080:8080"
+    expose:
+      - 8080
