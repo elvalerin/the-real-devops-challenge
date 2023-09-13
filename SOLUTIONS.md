@@ -2,7 +2,7 @@
 
 Challenge 1:
 
-I declare a new find method for returning only one result in JSON document format.
+I declared a new find method for returning only one single result in JSON document format.
 
 
 Challenge 2:
@@ -41,8 +41,9 @@ deploy:
 
 Pipeline results:
 
-(./screenshot01.png)
-(./screenshot02.png)
+![screenshot01](./assets/screenshot01.png)
+![screenshot02](./assets/screenshot02.png)
+
 
 Challenge 3:
 
@@ -55,4 +56,5 @@ for our mongo database. I use scripts for populating the database and creating t
 
 Challenge 5:
 
-I wrote a docker-compose file for deploying the app and the mongodb.
+I wrote a [docker-compose](https://github.com/elvalerin/the-real-devops-challenge/blob/master/docker-compose) file for and easy deployment of the app and the mongo database.
+
