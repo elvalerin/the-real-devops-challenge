@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-deployment
+  namespace: intelygenz
+  labels:
+    app: mongo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+        - name: mongo
+          image: javiervalero1/the-real-devops-challenge-mongo:latest
+          ports:
+            - name: http
+              containerPort: 27017
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+  namespace: intelygenz
+spec:
+  type: LoadBalancer
+  selector:
+    app: mongo
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017

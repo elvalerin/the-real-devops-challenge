@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-deployment
+  namespace: intelygenz
+  labels:
+    app: python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+        - name: python
+          image: javiervalero1/the-real-devops-challenge-app:latest
+          ports:
+            - name: http
+              containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: python
+  namespace: intelygenz
+spec:
+  type: LoadBalancer
+  selector:
+    app: python
+  externalIPs:
+    - 10.0.0.1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

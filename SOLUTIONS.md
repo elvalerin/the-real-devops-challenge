@@ -56,5 +56,8 @@ for our mongo database. I use scripts for populating the database and creating t
 
 Challenge 5:
 
-I wrote a [docker-compose](https://github.com/elvalerin/the-real-devops-challenge/blob/master/docker-compose) file for and easy deployment of the app and the mongo database.
+I wrote a [docker-compose](https://github.com/elvalerin/the-real-devops-challenge/blob/master/docker-compose.yml) file for and easy deployment of the app and the mongo database.
 
+Final challenge:
+
+I wrote some yaml in kubernetes folder for deploying the app and the mongo database in a Kubernetes cluster.
